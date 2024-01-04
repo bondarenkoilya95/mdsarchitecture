@@ -15,17 +15,17 @@ public protocol ScenarioDelegate: AnyObject {
     func didFinish(scenario: Scenario)
 }
 
-public class Scenario {
+open class Scenario {
     
     // MARK: - Variables
     
     let id = UUID()
     
-    public private(set) weak var delegate: ScenarioDelegate?
+    open private(set) weak var delegate: ScenarioDelegate?
     
-    public private(set) var rootVC: UIViewController?
+    open private(set) var rootVC: UIViewController?
     
-    public private(set) var childScenarios: [Scenario] = [Scenario]()
+    open private(set) var childScenarios: [Scenario] = [Scenario]()
     
     // MARK: - Init Method
     
@@ -36,19 +36,19 @@ public class Scenario {
     
     // MARK: - Open Methods
     
-    public func start() {
+    open func start() {
         /// This method should be override in subclass
     }
     
-    public func stop() {
+    open func stop() {
         finishAllChildScenarios()
     }
     
-    public func finish() {
+    open func finish() {
         delegate?.didFinish(scenario: self)
     }
     
-    public func finishAllChildScenarios() {
+    open func finishAllChildScenarios() {
         for childScenario in childScenarios {
             didFinish(scenario: childScenario)
         }

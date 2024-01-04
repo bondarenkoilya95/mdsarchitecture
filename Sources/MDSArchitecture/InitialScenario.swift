@@ -7,9 +7,9 @@
 
 import UIKit
 
-public class InitialScenario: Scenario {
+open class InitialScenario: Scenario {
     
-    public private(set) var window: UIWindow
+    open private(set) var window: UIWindow
     
     // MARK: - Init Method
     
@@ -20,7 +20,7 @@ public class InitialScenario: Scenario {
     
     // MARK: - Open Methods
     
-    public func installRootViewController(viewController: UIViewController) {
+    open func installRootViewController(viewController: UIViewController) {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }
