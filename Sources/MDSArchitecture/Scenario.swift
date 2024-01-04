@@ -29,7 +29,7 @@ open class Scenario {
     
     // MARK: - Init Method
     
-    public init(delegate: ScenarioDelegate?, rootVC: UIViewController) {
+    public init(delegate: ScenarioDelegate?, rootVC: UIViewController? = nil) {
         self.delegate = delegate
         self.rootVC = rootVC
     }

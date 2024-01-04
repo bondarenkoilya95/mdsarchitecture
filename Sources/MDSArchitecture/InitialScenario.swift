@@ -13,9 +13,9 @@ open class InitialScenario: Scenario {
     
     // MARK: - Init Method
     
-    public init(window: UIWindow, delegate: ScenarioDelegate?, rootVC: UIViewController) {
+    public init(window: UIWindow, delegate: ScenarioDelegate? = nil) {
         self.window = window
-        super.init(delegate: delegate, rootVC: rootVC)
+        super.init(delegate: delegate)
     }
     
     // MARK: - Open Methods
