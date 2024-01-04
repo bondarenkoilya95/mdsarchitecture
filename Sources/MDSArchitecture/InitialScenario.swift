@@ -7,6 +7,21 @@
 
 import UIKit
 
-class InitialScenario: Scenario {
-
+public class InitialScenario: Scenario {
+    
+    public private(set) var window: UIWindow
+    
+    // MARK: - Init Method
+    
+    public init(window: UIWindow, delegate: ScenarioDelegate?, rootVC: UIViewController) {
+        self.window = window
+        super.init(delegate: delegate, rootVC: rootVC)
+    }
+    
+    // MARK: - Open Methods
+    
+    public func installRootViewController(viewController: UIViewController) {
+        window.rootViewController = viewController
+        window.makeKeyAndVisible()
+    }
 }
